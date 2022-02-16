@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <img v-bind:src="img" v-bind:alt="name">
-        <h1>
+    <div id="app" v-bind:style="{background: '#' + color}">
+        <img 
+        v-on:mouseout="toggleShowPrices"
+        v-on:mouseover="toggleShowPrices"
+        v-bind:src="img"
+        v-bind:alt="name">
+        <h1 v-bind:class="changePercent > 0 ? 'green' : 'orange' ">
             {{name}}
             <span v-if="changePercent > 0">👍</span>
             <span v-else-if="changePercent < 0">👎</span>
@@ -19,14 +23,19 @@
             <!-- <span v-show="changePercent > 0">👍</span>
             <span v-show="changePercent < 0">👎</span>
             <span v-show="changePercent===0">🤞</span> -->
+            <span v-on:click="toggleShowPrices">{{showPrices?'🙈':'🙉'}}</span>
         </h1>
-        <ul>
+        <!-- <ul>
             <li v-for="(p,i) in prices" v-bind:key="p">{{i}}-{{p}}</li>
 
-        </ul>
+        </ul> -->
 
-        <ul>
-            <li v-for="(p,i) in pricesWithDays" v-bind:key="p.day">{{i}}-{{p.day}}-{{p.value}}</li>
+        <ul v-show="showPrices">
+            <li
+            class="uppercase"
+            v-bind:class="{orange:p.value === price, red: p.value<price, green:p.value>price}"
+            v-for="(p,i) in pricesWithDays"
+            v-bind:key="p.day">{{i}}-{{p.day}}-{{p.value}}</li>
 
         </ul>
     </div>

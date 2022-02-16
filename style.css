@@ -1,3 +1,19 @@
+.green{
+  color: seagreen
+}
+
+.orange{
+  color: orange;
+}
+
+.red{
+  color: red
+}
+
+.uppercase {
+  text-transform: uppercase
+}
+
 img {
     height: 64px;
     width: 64px;
