@@ -15,7 +15,7 @@
         v-bind:src="img"
         v-bind:alt="name">
         <h1 v-bind:class="changePercent > 0 ? 'green' : 'orange' ">
-            {{title}}
+            {{title}} 
             <span v-if="changePercent > 0">👍</span>
             <span v-else-if="changePercent < 0">👎</span>
             <span v-else>🤞</span>
@@ -29,6 +29,9 @@
             <li v-for="(p,i) in prices" v-bind:key="p">{{i}}-{{p}}</li>
 
         </ul> -->
+
+        <input type="number" v-model="value">
+        <span>{{convertedValue}}</span>
 
         <ul v-show="showPrices">
             <li
