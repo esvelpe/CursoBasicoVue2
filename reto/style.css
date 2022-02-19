@@ -1,13 +1,58 @@
 html {
+    font-family: 'Shizuru', cursive;
     padding: 20px;
-    color: #3d3d3d;
+    color: #201f1f;
   }
   
   .red {
-    color: tomato;
+    color: rgb(202, 30, 0);
+    font-size: 120%;
+    padding-bottom: 5%;
   }
 
   #app{
-      display: flex;
-      justify-content: center;
+      background-color: rgb(162, 159, 206);
+      text-align: center;
+      margin: auto 30%;
+      border-radius: 20px;
+      border: 2px solid black;
+      color: black;
   }
+
+  .titulo{
+    color: black;
+  }
+
+  input, textarea {
+    font    : .9em/1.5em "handwriting", sans-serif;
+  
+    border  : 1.5px solid black;
+    padding : 0 10px;
+    margin  : auto;
+    width   : 240px;
+  
+    background-color: rgb(209, 205, 228);
+  }
+
+  input:focus, textarea:focus {
+    background   : rgba(107, 173, 151, 0.801);
+    border-radius: 5px;
+    outline      : none;
+  }
+
+  button{
+    border-radius: 30px;
+    border       : 1.5px solid rgb(0, 0, 0);
+    padding: 5px 10px;
+  }
+
+  button:hover,
+  button:focus {
+  outline   : none;
+  background: rgb(62, 61, 128);
+  color   : #FFF;
+}
+
+.filled{
+  padding-top: 5px;
+}

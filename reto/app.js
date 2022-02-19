@@ -5,7 +5,8 @@ new Vue({
       return {
           courses: [],
           title:'',
-          time:null
+          time:null,
+          filled:false
       }
     },
     
@@ -20,10 +21,14 @@ new Vue({
     
     methods: {
         addCourse(){
-            let newCurse={title:this.title,time:this.time}
-            this.courses.push(newCurse)
-            this.title=''
-            this.time=null
+            if(this.title && this.time){
+                let newCurse={title:this.title,time:this.time}
+                this.courses.push(newCurse)
+                this.title=''
+                this.time=null
+            }else{
+                this.filled=true
+            }
         }
     }
   })

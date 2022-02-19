@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reto/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-        <h1>
+        <h1 class="titulo">
           Mis Cursos de Platzi💚
         </h1>
           <p>
@@ -17,18 +21,23 @@
           <p>
             <input v-model="time" type="number" placeholder="Horas" class="time"/>
           </p>
+          <p class="bttn-fd">
+            <button v-on:click="addCourse">➕</button>
+          </p>
           <p>
-            <button v-on:click="addCourse">Guardar Curso</button>
+            <span v-show="filled" class="filled">Ingresa el nombre y las horas que estudiaste</span>
           </p>
         </fieldset>
         <div>
-          <h3>Lista de Cursos</h3>
+          <h3>Lista de Cursos:</h3>
           <p class="red"
           v-if="courses.length===0">Aun no has realizado cursos</p>
           <div v-else>
-            <ol v-for="(p,i) in courses"
-            v-bind:key="p.title">
-              {{i}}) Has tomado el curso {{p.title}} que contiene {{p.time}} horas de aprendizaje.
+            <ol>
+              <li v-for="p in courses"
+              v-bind:key="p.title">
+              Has tomado el curso <strong>{{p.title}}</strong> que contiene <strong>{{p.time}}</strong> horas de aprendizaje.
+              </li>
             </ol>
             <hr/>
             <p>
