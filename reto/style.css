@@ -44,8 +44,7 @@ html {
     padding: 5px 10px;
   }
 
-  button:hover,
-  button:focus {
+  button:hover {
   outline   : none;
   background: rgb(62, 61, 128);
   color   : #FFF;
@@ -58,4 +57,8 @@ li{
 
 .filled{
   padding-top: 5px;
+}
+footer
+{
+  text-align: center;
 }

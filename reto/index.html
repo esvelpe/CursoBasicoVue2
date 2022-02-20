@@ -26,7 +26,7 @@
             <button v-on:click="deleteCourse">➖</button>
           </p>
           <p>
-            <span v-show="filled" class="filled">Ingresa el nombre del curso y las horas que estudiaste</span>
+            <span v-show="filled" class="filled">Ingresa el nombre del curso y/o las horas que estudiaste</span>
           </p>
         </fieldset>
         <div>
@@ -37,7 +37,7 @@
             <ol>
               <li v-for="p in courses"
               v-bind:key="p.title">
-              Has tomado el curso <strong>{{p.title}}</strong> que contiene <strong>{{p.time}}</strong> horas de aprendizaje.
+              Haz tomado el curso <strong>{{p.title}}</strong> que contiene <strong>{{p.time}}</strong> horas de aprendizaje.
               </li>
             </ol>
             <hr/>
@@ -52,4 +52,9 @@
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
       <script src="app.js"></script>
 </body>
+<footer>
+  <small>
+    Desarrollado por Esneider Vélez Peña - febrero 2022
+  </small>
+</footer>
 </html>
