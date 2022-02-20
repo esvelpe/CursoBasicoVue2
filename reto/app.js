@@ -6,7 +6,8 @@ new Vue({
           courses: [],
           title:'',
           time:null,
-          filled:false
+          filled:false,
+          displayed:false
       }
     },
     
@@ -29,6 +30,10 @@ new Vue({
             }else{
                 this.filled=true
             }
+        },
+
+        deleteCourse(){
+            this.courses.pop()
         }
     }
   })

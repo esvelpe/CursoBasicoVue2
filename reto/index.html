@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/reto/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -23,9 +23,10 @@
           </p>
           <p class="bttn-fd">
             <button v-on:click="addCourse">➕</button>
+            <button v-on:click="deleteCourse">➖</button>
           </p>
           <p>
-            <span v-show="filled" class="filled">Ingresa el nombre y las horas que estudiaste</span>
+            <span v-show="filled" class="filled">Ingresa el nombre del curso y las horas que estudiaste</span>
           </p>
         </fieldset>
         <div>

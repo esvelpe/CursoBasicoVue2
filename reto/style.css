@@ -1,7 +1,6 @@
 html {
-    font-family: 'Shizuru', cursive;
+    font-family: 'Akaya Telivigala', cursive;
     padding: 20px;
-    color: #201f1f;
   }
   
   .red {
@@ -13,10 +12,9 @@ html {
   #app{
       background-color: rgb(162, 159, 206);
       text-align: center;
-      margin: auto 30%;
+      margin: auto 20%;
       border-radius: 20px;
       border: 2px solid black;
-      color: black;
   }
 
   .titulo{
@@ -51,6 +49,11 @@ html {
   outline   : none;
   background: rgb(62, 61, 128);
   color   : #FFF;
+}
+
+li{
+  color: #292828;
+  font-size: 120%;
 }
 
 .filled{
