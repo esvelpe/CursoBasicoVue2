@@ -11,11 +11,18 @@
     <div id="app" v-bind:style="{background: '#' + color}">
         
         
-        <coin-detail v-bind:coin="btc"></coin-detail>
-        <!-- <ul>
-            <li v-for="(p,i) in prices" v-bind:key="p">{{i}}-{{p}}</li>
+    <coin-detail
+        v-on:change-color="updateColor"
+        v-bind:coin="btc">
 
-        </ul> -->
+        <template v-slot:text> 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum suscipit rem odit possimus velit alias porro, praesentium dolor et cupiditate perferendis quia nihil illo non atque quisquam vero doloribus aliquid.</p>
+        </template>
+        <template v-slot:link>
+            <a href="#">Link!</a>
+        </template>
+    </coin-detail>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="app.js"></script>

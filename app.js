@@ -9,6 +9,14 @@ Vue.component('CoinDetail',{
         }
     },
 
+    methods: {
+        toggleShowPrices () {
+            this.showPrices=!this.showPrices
+
+            this.$emit('change-color',this.showPrices?'FF96C8':'3D3D3D')
+        }
+    },
+
     computed: {
         title (){
             return `${this.coin.name} - ${this.coin.symbol}`
@@ -23,10 +31,12 @@ Vue.component('CoinDetail',{
         }
     },
 
-    methods: {
-        toggleShowPrices () {
-            this.showPrices=!this.showPrices
-        }
+    created (){
+        console.log('Created coin detail')
+    },
+
+    mounted (){
+        console.log('Mounted coin detail')
     },
 
     template:`
@@ -52,6 +62,9 @@ Vue.component('CoinDetail',{
         <input type="number" v-model="value">
         <span>{{convertedValue}}</span>
 
+        <slot name="text"></slot>
+        <slot name="link"></slot>
+
         <ul v-show="showPrices">
             <li
             class="uppercase"
@@ -70,6 +83,8 @@ new Vue({
 
     data (){
         return {
+            color:'f4f4f4',
+
             btc:{
                 name: 'Bitcoin',
                 symbol: 'BTC',
@@ -87,16 +102,21 @@ new Vue({
                 ],
             },
 
-            color: 'f4f4f4',
         }
 
     },
 
-    // methods: {
-    //     toggleShowPrices(){
-    //         this.showPrices=!this.showPrices
+    created (){
+        console.log('Created')
+    },
 
-    //         this.color=this.color.split('').reverse().join('')
-    //     }
-    // }
+    mounted (){
+        console.log('Mounted')
+    },
+
+    methods: {
+        updateColor(color){
+            this.color=color || this.color.split('').reverse().join('')
+        }
+    }
 })
