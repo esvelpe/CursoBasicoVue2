@@ -14,9 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
-      >
+      <tr class="border-b border-gray-200 hover:bg-gray-100">
         <td></td>
         <td></td>
         <td></td>
