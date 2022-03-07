@@ -6,6 +6,41 @@ function getAssets() {
     .then((resp) => resp.data);
 }
 
+function getAsset(coin) {
+  return fetch(`${url}/assets/${coin}`)
+    .then((resp) => resp.json())
+    .then((resp) => resp.data);
+}
+
+function getAssetHistory(coin) {
+  const now = new Date();
+  const end = now.getTime();
+  now.setDate(now.getDate() - 1);
+  const start = now.getTime();
+
+  return fetch(
+    `${url}/assets/${coin}/history?interval=h1&start=${start}&end=${end}`
+  )
+    .then((resp) => resp.json())
+    .then((resp) => resp.data);
+}
+
+function getMarkets(coin) {
+  return fetch(`${url}/assets/${coin}/markets?limit=5`)
+    .then((resp) => resp.json())
+    .then((resp) => resp.data);
+}
+
+function getExchange(id) {
+  return fetch(`${url}/exchanges/${id}`)
+    .then((resp) => resp.json())
+    .then((resp) => resp.data);
+}
+
 export default {
   getAssets,
+  getAsset,
+  getMarkets,
+  getExchange,
+  getAssetHistory,
 };
